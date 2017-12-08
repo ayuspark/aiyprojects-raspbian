@@ -41,12 +41,12 @@ def main():
         else:
             print('You said "', text, '"')
             if 'turn on the light' in text:
-                led.set_state(aiy.voicehat.LED.BEACON)
+                led.set_state(aiy.voicehat.LED.ON)
             elif 'turn off the light' in text:
                 led.set_state(aiy.voicehat.LED.OFF)
             elif 'blink' in text:
-                led.set_state(aiy.voicehat.LED.PULSE_SLOW)
-            elif 'scottie dog' in text:
+                led.set_state(aiy.voicehat.LED.BLINK)
+            elif 'dog' in text:
                 led.set_state(aiy.voicehat.LED.BLINK_3)
                 pass
             elif 'goodbye' in text:
