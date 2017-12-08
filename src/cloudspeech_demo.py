@@ -25,6 +25,7 @@ def main():
     recognizer.expect_phrase('turn off the light')
     recognizer.expect_phrase('turn on the light')
     recognizer.expect_phrase('blink')
+    recognizer.expect_phrase('scottie dog')
 
     button = aiy.voicehat.get_button()
     led = aiy.voicehat.get_led()
@@ -40,11 +41,14 @@ def main():
         else:
             print('You said "', text, '"')
             if 'turn on the light' in text:
-                led.set_state(aiy.voicehat.LED.ON)
+                led.set_state(aiy.voicehat.LED.BEACON)
             elif 'turn off the light' in text:
                 led.set_state(aiy.voicehat.LED.OFF)
             elif 'blink' in text:
-                led.set_state(aiy.voicehat.LED.BLINK)
+                led.set_state(aiy.voicehat.LED.PULSE_SLOW)
+            elif 'scottie dog' in text:
+                led.set_state(aiy.voicehat.LED.BLINK_3)
+                pass
             elif 'goodbye' in text:
                 break
 

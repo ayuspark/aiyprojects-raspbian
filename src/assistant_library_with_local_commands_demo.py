@@ -54,6 +54,10 @@ def say_ip():
     ip_address = subprocess.check_output("hostname -I | cut -d' ' -f1", shell=True)
     aiy.audio.say('My IP address is %s' % ip_address.decode('utf-8'))
 
+# TODO: does not work by directly adding say(xxxxxx), looks like may have to program it in the cloud
+def scottie_dog():
+    aiy.audio.say('Woof! Woof! Woof')
+
 
 def process_event(assistant, event):
     status_ui = aiy.voicehat.get_status_ui()
@@ -77,6 +81,10 @@ def process_event(assistant, event):
         elif text == 'ip address':
             assistant.stop_conversation()
             say_ip()
+        elif text == 'Scottie dog':
+            assistant.stop_conversation()
+            scottie_dog()
+            pass
 
     elif event.type == EventType.ON_END_OF_UTTERANCE:
         status_ui.status('thinking')
