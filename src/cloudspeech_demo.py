@@ -25,7 +25,7 @@ def main():
     recognizer.expect_phrase('turn off the light')
     recognizer.expect_phrase('turn on the light')
     recognizer.expect_phrase('blink')
-    recognizer.expect_phrase('scottie dog')
+    recognizer.expect_phrase('dog')
 
     button = aiy.voicehat.get_button()
     led = aiy.voicehat.get_led()

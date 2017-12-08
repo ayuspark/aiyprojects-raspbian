@@ -54,8 +54,6 @@ def say_ip():
     ip_address = subprocess.check_output("hostname -I | cut -d' ' -f1", shell=True)
     aiy.audio.say('My IP address is %s' % ip_address.decode('utf-8'))
 
-
-# TODO: does not work by directly adding say(xxxxxx), looks like may have to program it in the cloud
 def dog():
     aiy.audio.say('i am a dog')
 
