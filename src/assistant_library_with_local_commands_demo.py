@@ -57,6 +57,9 @@ def say_ip():
 def dog():
     aiy.audio.say('i am a dog')
 
+def dachouzhu():
+    aiy.audio.say('eli is da chou zhu')
+
 
 def process_event(assistant, event):
     status_ui = aiy.voicehat.get_status_ui()
@@ -83,6 +86,9 @@ def process_event(assistant, event):
         elif text == 'dog':
             assistant.stop_conversation()
             dog()
+        elif text == 'eli':
+            assistant.stop_conversation()
+            dachouzhu()
             pass
 
     elif event.type == EventType.ON_END_OF_UTTERANCE:
